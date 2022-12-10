@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <div class="screen bg-slate-800 flex border-2 border-red-500 justify-center text-white h-screen">
+    <div class="container p-8 flex flex-col items-center justify-center gap-y-6" x-data="{ test: false }">
+      <h1 class="text-2xl font-bold tracking-sm">This is my Alpine test</h1>
+      <button @click="test = !test"
+        class="px-8 py-4 border-2 border-gray-800 rounded-md bg-slate-300 text-slate-800 text-lg uppercase">Toggle</button>
+      <div x-cloak x-show="test" x-transition>
+        <p>This should display and hide on button click</p>
+      </div>
+    </div>
+    <div class="container test-2">
+      <div x-data="{ showlogin: false }"
+        class="inner-login-wrapper flex flex-row-reverse text-base-color text-xs lg:text-sm">
+        <button class="login-popup flex w-fit-content items-center" @click="showLogin = !showLogin">
+          <span class="h-3 w-3 flex items-center">Hello</span>
+          Link
+        </button>
+
+        <h3 class="text-base-color font-bold text-sm flex items-center w-max-content "><span class="h-3 w-3">Login</h3>
+
+        <div x-show="showlogin" class="password-page-login flex">
+          <p>Test</p>>
+          <label for="password">Pw</label>
+          <input type="password" name="password" id="Password" placeholder="placeholder">
+          <button type="submit" class="btn btn-primary text-xs">Btn</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
